@@ -1,0 +1,2777 @@
+<html>
+<meta charset="UTF-8">
+<style>
+body { 
+font-family: 'Lato', sans-serif !important;
+font-size: 14px!important;
+color: #353535;
+background-color: #f0f1f2;
+background: #f0f1f2;
+}
+</style>
+<title>
+Program Summary - final_frc.sas
+</title>
+<body>
+<center>
+<h3>
+Program Summary - final_frc.sas</center>
+<p><hr>
+<h3>Execution Environment</h3>
+<table border=0>
+<tr><td nowrap>Author:</td><td nowrap>u63347966</td></tr><tr><td nowrap>File:</td><td nowrap>/home/u63347966/sasuser.v94/Final project/final_frc.sas</td></tr><tr><td nowrap>SAS Platform:</td><td nowrap>Linux LIN X64 3.10.0-1062.12.1.el7.x86_64</td></tr><tr><td nowrap>SAS Host:</td><td nowrap>ODAWS01-USW2-2.ODA.SAS.COM</td></tr><tr><td nowrap>SAS Version:</td><td nowrap>9.04.01M7P08062020</td></tr><tr><td nowrap>SAS Locale:</td><td nowrap>en_US</td></tr><tr><td nowrap>Submission Time:</td><td nowrap>4/29/2023, 8:11:28 AM</td></tr><tr><td nowrap>Browser Host:</td><td nowrap>75-101-47-58.DEDICATED.STATIC.SONIC.NET</td></tr><tr><td nowrap>User Agent:</td><td>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36</td></tr><tr><td nowrap>Application Server:</td><td nowrap>ODAMID00-USW2-2.ODA.SAS.COM</td></tr>
+</table>
+</h3></center>
+<p><hr></hr>
+<link media="all" rel="stylesheet" href="https://odamid-usw2-2.oda.sas.com/SASStudio/proxy/308101.5.0.20220427130200_f0dms381p/resources/js/dojo/dijit/themes/corporate/sce.css" /><div>
+<h3>Code: final_frc.sas</h3>
+<div style="width: 816.93px; height: 1541px;"><div tabindex="-1" role="application" class="textview sce sce-sas _textviewDOMReady" style="position: relative; overflow: hidden; width: 100%; height: 100%; text-size-adjust: 100%; line-height: normal;"><div class="textviewLeftRuler" tabindex="-1" aria-hidden="true" style="overflow: hidden; user-select: none; position: absolute; top: 0px; bottom: 0px; cursor: default; display: none;"></div><div class="textviewScroll" tabindex="-1" style="position: absolute; inset: 0px; border-width: 0px; margin: 0px; outline: none; background: transparent; overflow: hidden;"><div style="margin: 0px; border-width: 0px; padding: 0px; height: 1517px; width: 812px;"></div></div><div class="textviewRightRuler" tabindex="-1" aria-hidden="true" style="overflow: hidden; user-select: none; position: absolute; top: 0px; bottom: 0px; cursor: default; display: none; right: 0px;"></div><div class="textviewInnerRightRuler" tabindex="-1" aria-hidden="true" style="overflow: hidden; user-select: none; position: absolute; top: 0px; bottom: 0px; cursor: default; display: none; z-index: 1; right: 0px;"></div><div class="textviewMarginRuler" tabindex="-1" aria-hidden="true" style="overflow: hidden; user-select: none; position: absolute; top: 0px; bottom: 0px; cursor: default; display: none; z-index: 4; left: 2px;"></div><div style="position: absolute; overflow: hidden; margin: 0px; border-width: 0px; padding: 0px; background: transparent; inset: 0px 1px 4px 0px;"><div style="position: absolute; height: 1px; top: -1000px; background: transparent; width: 812px;"></div><div class="textviewContent" tabindex="0" spellcheck="false" contenteditable="true" style="position: absolute; border-width: 0px; margin: 0px; padding: 0px; outline: none; z-index: 1; user-select: text; white-space: pre; overflow-wrap: normal; tab-size: 4; left: 2px; top: 4px; width: 812px; height: 1533px;"><div class=" block-mark"><span class="sec-keyword">proc</span><span class="text"> </span><span class="sec-keyword">import</span><span class="text"> </span><span> </span></div><div><span class="keyword">out</span><span class="text"> </span><span class="sep">=</span><span class="text"> FRC</span><span> </span></div><div><span class="keyword">datafile</span><span class="text"> </span><span class="sep">=</span><span class="text"> </span><span class="string">"/home/u63347966/sasuser.v94/Final project/FRC (1).csv"</span><span> </span></div><div><span class="keyword">dbms</span><span class="text"> </span><span class="sep">=</span><span class="text"> csv </span><span class="keyword">replace</span><span class="sep">;</span><span> </span></div><div><span class="keyword">getnames</span><span class="text"> </span><span class="sep">=</span><span class="text"> yes</span><span class="sep">;</span><span> </span></div><div><span class="keyword">datarow</span><span class="text"> </span><span class="sep">=</span><span class="text"> </span><span class="numeric">2</span><span class="sep">;</span><span> </span></div><div><span class="sec-keyword">run</span><span class="sep">;</span><span> </span></div><div><span> </span></div><div class=" block-mark"><span class="sec-keyword">data</span><span class="text"> work.frc1</span><span class="sep">;</span><span> </span></div><div><span class="keyword">set</span><span class="text"> frc</span><span class="sep">;</span><span> </span></div><div><span class="keyword">rename</span><span class="text"> </span><span class="namelit">'Adj Close'n</span><span class="text"> </span><span class="sep">=</span><span class="text"> adj_close</span><span class="sep">;</span><span> </span></div><div><span class="sec-keyword">run</span><span class="sep">;</span><span> </span></div><div><span> </span></div><div><span> </span></div><div class=" block-mark"><span class="sec-keyword">proc</span><span class="text"> </span><span class="sec-keyword">sort</span><span class="text"> </span><span class="keyword">data</span><span class="text"> </span><span class="sep">=</span><span class="text"> frc1</span><span class="sep">;</span><span> </span></div><div><span class="keyword">by</span><span class="text"> date</span><span class="sep">;</span><span> </span></div><div><span class="sec-keyword">run</span><span class="sep">;</span><span> </span></div><div><span> </span></div><div class=" block-mark"><span class="sec-keyword">data</span><span class="text"> frc1</span><span class="sep">;</span><span> </span></div><div><span class="keyword">set</span><span class="text"> frc1</span><span class="sep">;</span><span> </span></div><div><span class="text">frc_return </span><span class="sep">=</span><span class="text"> adj_close</span><span class="sep">/</span><span class="keyword">lag</span><span class="sep">(</span><span class="text">adj_close</span><span class="sep">)</span><span class="text"> </span><span class="sep">-</span><span class="text"> </span><span class="numeric">1</span><span class="sep">;</span><span> </span></div><div><span class="sec-keyword">run</span><span class="sep">;</span><span> </span></div><div><span> </span></div><div class=" block-mark"><span class="sec-keyword">proc</span><span class="text"> </span><span class="sec-keyword">contents</span><span class="text"> </span><span class="keyword">data</span><span class="text"> </span><span class="sep">=</span><span class="text"> frc1</span><span class="sep">;</span><span> </span></div><div><span class="sec-keyword">run</span><span class="sep">;</span><span> </span></div><div><span> </span></div><div><span> </span></div><div class=" block-mark"><span class="sec-keyword">proc</span><span class="text"> </span><span class="sec-keyword">means</span><span class="text"> </span><span class="keyword">data</span><span class="text"> </span><span class="sep">=</span><span class="text"> frc1</span><span class="sep">;</span><span> </span></div><div><span class="keyword">var</span><span class="text"> frc_return</span><span class="sep">;</span><span> </span></div><div><span class="keyword">output</span><span class="text"> </span><span class="keyword">out</span><span class="text"> </span><span class="sep">=</span><span class="text"> frc_stat </span><span class="keyword">mean</span><span class="text"> </span><span class="sep">=</span><span class="text"> std </span><span class="sep">=</span><span class="text"> </span><span class="sep">/</span><span class="keyword">autoname</span><span class="sep">;</span><span> </span></div><div><span class="sec-keyword">run</span><span class="sep">;</span><span> </span></div><div><span> </span></div><div class=" block-mark"><span class="sec-keyword">proc</span><span class="text"> </span><span class="sec-keyword">univariate</span><span class="text"> </span><span class="keyword">data</span><span class="sep">=</span><span class="text">frc1 </span><span class="keyword">all</span><span class="sep">;</span><span> </span></div><div><span class="keyword">var</span><span class="text"> frc_return</span><span class="sep">;</span><span> </span></div><div><span class="sec-keyword">run</span><span class="sep">;</span><span> </span></div><div><span> </span></div><div class=" block-mark"><span class="sec-keyword">proc</span><span class="text"> </span><span class="sec-keyword">import</span><span class="text"> </span><span> </span></div><div><span class="keyword">out</span><span class="text"> </span><span class="sep">=</span><span class="text"> riskfree</span><span> </span></div><div><span class="keyword">datafile</span><span class="text"> </span><span class="sep">=</span><span class="text"> </span><span class="string">"/home/u63347966/sasuser.v94/Final project/daily-treasury-rates (1).csv"</span><span> </span></div><div><span class="keyword">dbms</span><span class="text"> </span><span class="sep">=</span><span class="text"> csv </span><span class="keyword">replace</span><span class="sep">;</span><span> </span></div><div><span class="keyword">getnames</span><span class="text"> </span><span class="sep">=</span><span class="text"> yes</span><span class="sep">;</span><span> </span></div><div><span class="keyword">datarow</span><span class="text"> </span><span class="sep">=</span><span class="text"> </span><span class="numeric">2</span><span class="sep">;</span><span> </span></div><div><span class="sec-keyword">run</span><span class="sep">;</span><span> </span></div><div><span> </span></div><div class=" block-mark"><span class="sec-keyword">data</span><span class="text"> work.riskfree1</span><span class="sep">;</span><span> </span></div><div><span class="keyword">set</span><span class="text"> work.riskfree</span><span class="sep">;</span><span> </span></div><div><span class="keyword">rename</span><span class="text"> </span><span class="namelit">'Date'n</span><span class="text"> </span><span class="sep">=</span><span class="text"> new_date</span><span class="sep">;</span><span> </span></div><div><span class="keyword">rename</span><span class="text"> </span><span class="namelit">'1 Mo'n</span><span class="text"> </span><span class="sep">=</span><span class="text"> bc_1month</span><span class="sep">;</span><span> </span></div><div><span class="sec-keyword">run</span><span class="sep">;</span><span class="text"> </span><span> </span></div><div><span> </span></div><div class=" block-mark"><span class="sec-keyword">data</span><span class="text"> riskfree1</span><span class="sep">;</span><span> </span></div><div><span class="keyword">set</span><span class="text"> riskfree1</span><span class="sep">;</span><span> </span></div><div><span class="text">Date </span><span class="sep">=</span><span class="text"> </span><span class="keyword">put</span><span class="sep">(</span><span class="text">new_date</span><span class="sep">,</span><span class="text"> </span><span class="format">yymmdd10.</span><span class="sep">);</span><span> </span></div><div><span class="keyword">format</span><span class="text"> Date </span><span class="format">yymmdd10.</span><span class="sep">;</span><span> </span></div><div><span class="text">t_dailyreturn </span><span class="sep">=</span><span class="text"> bc_1month</span><span class="sep">/</span><span class="numeric">100</span><span class="sep">/</span><span class="numeric">365</span><span class="sep">;</span><span> </span></div><div><span class="sec-keyword">run</span><span class="sep">;</span><span> </span></div><div><span> </span></div><div class=" block-mark"><span class="sec-keyword">proc</span><span class="text"> </span><span class="sec-keyword">contents</span><span class="text"> </span><span class="keyword">data</span><span class="text"> </span><span class="sep">=</span><span class="text"> riskfree1</span><span class="sep">;</span><span> </span></div><div><span class="sec-keyword">run</span><span class="sep">;</span><span> </span></div><div><span> </span></div><div class=" block-mark"><span class="sec-keyword">proc</span><span class="text"> </span><span class="sec-keyword">means</span><span class="text"> </span><span class="keyword">data</span><span class="text"> </span><span class="sep">=</span><span class="text"> riskfree1</span><span class="sep">;</span><span> </span></div><div><span class="keyword">var</span><span class="text"> t_dailyreturn</span><span class="sep">;</span><span> </span></div><div><span class="keyword">output</span><span class="text"> </span><span class="keyword">out</span><span class="text"> </span><span class="sep">=</span><span class="text"> tbill_stat </span><span class="sep">(</span><span class="keyword">drop</span><span class="text"> </span><span class="sep">=</span><span class="text"> _freq_ _type_</span><span class="sep">)</span><span class="text"> </span><span class="keyword">mean</span><span class="text"> </span><span class="sep">=</span><span class="text"> </span><span class="sep">/</span><span class="keyword">autoname</span><span class="sep">;</span><span> </span></div><div><span class="sec-keyword">run</span><span class="sep">;</span><span> </span></div><div><span> </span></div><div class=" block-mark"><span class="sec-keyword">data</span><span class="text"> ratio</span><span class="sep">;</span><span> </span></div><div><span class="keyword">merge</span><span class="text"> frc_stat tbill_stat</span><span class="sep">;</span><span> </span></div><div><span class="sec-keyword">run</span><span class="sep">;</span><span> </span></div><div><span> </span></div><div class=" block-mark"><span class="sec-keyword">proc</span><span class="text"> </span><span class="sec-keyword">contents</span><span class="text"> </span><span class="keyword">data</span><span class="text"> </span><span class="sep">=</span><span class="text"> ratio</span><span class="sep">;</span><span> </span></div><div><span class="sec-keyword">run</span><span class="sep">;</span><span> </span></div><div><span> </span></div><div class=" block-mark"><span class="sec-keyword">data</span><span class="text"> ratio_sf_sharpe</span><span class="sep">;</span><span> </span></div><div><span class="keyword">set</span><span class="text"> ratio</span><span class="sep">;</span><span> </span></div><div><span class="text">cv</span><span class="sep">=</span><span class="text">frc_return_StdDev</span><span class="sep">/</span><span class="text">frc_return_Mean</span><span class="sep">;</span><span> </span></div><div><span class="text">acceptable_rate</span><span class="sep">=</span><span class="numeric">0.03</span><span class="sep">/</span><span class="numeric">365</span><span class="sep">;</span><span class="comment">/*I assume the annual acceptable rate is 0.03*/</span><span> </span></div><div><span class="text">sf_ratio</span><span class="sep">=(</span><span class="text">frc_return_Mean</span><span class="sep">-</span><span class="text">acceptable_rate</span><span class="sep">)/</span><span class="text">frc_return_StdDev</span><span class="sep">;</span><span> </span></div><div><span class="text">sharpe_ratio</span><span class="sep">=(</span><span class="text">frc_return_Mean</span><span class="sep">-</span><span class="text"> t_dailyreturn_Mean</span><span class="sep">)/</span><span class="text">frc_return_StdDev</span><span class="sep">;</span><span> </span></div><div><span class="text">SFprobability</span><span class="sep">=</span><span class="keyword">probnorm</span><span class="sep">(-</span><span class="text">sf_ratio</span><span class="sep">);</span><span> </span></div><div><span class="sec-keyword">run</span><span class="sep">;</span><span> </span></div><div><span> </span></div><div><span> </span></div></div><div class="textviewSelectionUnfocused" style="position: absolute; border-width: 0px; margin: 0px; padding: 0px; outline: none; width: 0px; height: 0px; z-index: 0; visibility: visible;"></div><div class="textviewSelectionUnfocused" style="position: absolute; border-width: 0px; margin: 0px; padding: 0px; outline: none; width: 0px; height: 0px; z-index: 0;"></div><div class="textviewSelectionUnfocused" style="position: absolute; border-width: 0px; margin: 0px; padding: 0px; outline: none; width: 0px; height: 0px; z-index: 0;"></div></div></div></div></div>
+<div>
+<hr><h3>Log: final_frc.sas</h3>
+<style>
+.sasError{color:red}
+.sasMessage{color:#000}
+.sasWarning{color:#008000}
+.sasSource{color:#000}
+.sasNote{color:#00f}
+</style><p>Notes (48)</p>
+<div {'style':display:none;height:0px'}="" charset="UTF-8"></div><div {'style':display:none;height:0px'}="" rel="stylesheet" href="./log.css"></div><style rel="stylesheet">.sasError {color: red;}.sasMessage{color:#000000;}.sasWarning{color:green;}.sasSource{color:#000000;}.sasNote {color:blue;}</style><div {'style':display:none;height:0px'}log:final_frc.sas<="" div=""><pre class="sasLog" id="pre_sasLog_48866" style="background-color:transparent; -webkit-user-select: text; -webkit-user-modify: read-only;-webkit-touch-callout: default;border-top-width: 0px;border-bottom-width: 0px"><div><div class="sasSource"> </div><div class="sasSource"> 1          OPTIONS NONOTES NOSTIMER NOSOURCE NOSYNTAXCHECK;</div><div class="sasSource"> 68         </div><div class="sasSource"> 69         proc import</div><div class="sasSource"> 70         out = FRC</div><div class="sasSource"> 71         datafile = "/home/u63347966/sasuser.v94/Final project/FRC (1).csv"</div><div class="sasSource"> 72         dbms = csv replace;</div><div class="sasSource"> 73         getnames = yes;</div><div class="sasSource"> 74         datarow = 2;</div><div class="sasSource"> 75         run;</div><div class="sasNote"> </div><div class="sasSource"> NOTE: Unable to open parameter catalog: SASUSER.PARMS.PARMS.SLIST in update mode. Temporary parameter values will be saved to </div><div class="sasSource"> WORK.PARMS.PARMS.SLIST.</div><div class="sasSource"> 76          /**********************************************************************</div><div class="sasSource"> 77          *   PRODUCT:   SAS</div><div class="sasSource"> 78          *   VERSION:   9.4</div><div class="sasSource"> 79          *   CREATOR:   External File Interface</div><div class="sasSource"> 80          *   DATE:      29APR23</div><div class="sasSource"> 81          *   DESC:      Generated SAS Datastep Code</div><div class="sasSource"> 82          *   TEMPLATE SOURCE:  (None Specified.)</div><div class="sasSource"> 83          ***********************************************************************/</div><div class="sasSource"> 84             data WORK.FRC    ;</div><div class="sasSource"> 85             %let _EFIERR_ = 0; /* set the ERROR detection macro variable */</div><div class="sasSource"> 86             infile '/home/u63347966/sasuser.v94/Final project/FRC (1).csv' delimiter = ',' MISSOVER DSD lrecl=32767 firstobs=2 ;</div><div class="sasSource"> 87                informat Date yymmdd10. ;</div><div class="sasSource"> 88                informat Open best32. ;</div><div class="sasSource"> 89                informat High best32. ;</div><div class="sasSource"> 90                informat Low best32. ;</div><div class="sasSource"> 91                informat Close best32. ;</div><div class="sasSource"> 92                informat "Adj Close"N best32. ;</div><div class="sasSource"> 93                informat Volume best32. ;</div><div class="sasSource"> 94                format Date yymmdd10. ;</div><div class="sasSource"> 95                format Open best12. ;</div><div class="sasSource"> 96                format High best12. ;</div><div class="sasSource"> 97                format Low best12. ;</div><div class="sasSource"> 98                format Close best12. ;</div><div class="sasSource"> 99                format "Adj Close"N best12. ;</div><div class="sasSource"> 100               format Volume best12. ;</div><div class="sasSource"> 101            input</div><div class="sasSource"> 102                        Date</div><div class="sasSource"> 103                        Open</div><div class="sasSource"> 104                        High</div><div class="sasSource"> 105                        Low</div><div class="sasSource"> 106                        Close</div><div class="sasSource"> 107                        "Adj Close"N</div><div class="sasSource"> 108                        Volume</div><div class="sasSource"> 109            ;</div><div class="sasSource"> 110            if _ERROR_ then call symputx('_EFIERR_',1);  /* set ERROR detection macro variable */</div><div class="sasSource"> 111            run;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote1_1682781087922"> NOTE: The infile '/home/u63347966/sasuser.v94/Final project/FRC (1).csv' is:</div><div class="sasNote">       Filename=/home/u63347966/sasuser.v94/Final project/FRC (1).csv,</div><div class="sasNote">       Owner Name=u63347966,Group Name=oda,</div><div class="sasNote">       Access Permission=-rw-r--r--,</div><div class="sasNote">       Last Modified=27Apr2023:00:41:47,</div><div class="sasNote">       File Size (bytes)=1372</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote2_1682781087922"> NOTE: 19 records were read from the infile '/home/u63347966/sasuser.v94/Final project/FRC (1).csv'.</div><div class="sasNote">       The minimum record length was 69.</div><div class="sasNote">       The maximum record length was 70.</div><div class="sasNote" id="sasLogNote3_1682781087922"> NOTE: The data set WORK.FRC has 19 observations and 7 variables.</div><div class="sasNote" id="sasLogNote4_1682781087922"> NOTE: DATA statement used (Total process time):</div><div class="sasNote">       real time           0.00 seconds</div><div class="sasNote">       user cpu time       0.00 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              9508.73k</div><div class="sasNote">       OS Memory           33052.00k</div><div class="sasNote">       Timestamp           04/29/2023 03:11:28 PM</div><div class="sasNote">       Step Count                        202  Switch Count  2</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     122</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        11</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           272</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 19 rows created in WORK.FRC from /home/u63347966/sasuser.v94/Final project/FRC (1).csv.</div><div class="sasSource">   </div><div class="sasSource">   </div><div class="sasSource">   </div><div class="sasNote" id="sasLogNote5_1682781087922"> NOTE: WORK.FRC data set was successfully created.</div><div class="sasNote" id="sasLogNote6_1682781087922"> NOTE: The data set WORK.FRC has 19 observations and 7 variables.</div><div class="sasNote" id="sasLogNote7_1682781087922"> NOTE: PROCEDURE IMPORT used (Total process time):</div><div class="sasNote">       real time           0.05 seconds</div><div class="sasNote">       user cpu time       0.04 seconds</div><div class="sasNote">       system cpu time     0.01 seconds</div><div class="sasNote">       memory              9508.73k</div><div class="sasNote">       OS Memory           33312.00k</div><div class="sasNote">       Timestamp           04/29/2023 03:11:28 PM</div><div class="sasNote">       Step Count                        202  Switch Count  9</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     2744</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        77</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           320</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 112        </div><div class="sasSource"> 113        data work.frc1;</div><div class="sasSource"> 114        set frc;</div><div class="sasSource"> 115        rename 'Adj Close'n = adj_close;</div><div class="sasSource"> 116        run;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote8_1682781087922"> NOTE: There were 19 observations read from the data set WORK.FRC.</div><div class="sasNote" id="sasLogNote9_1682781087922"> NOTE: The data set WORK.FRC1 has 19 observations and 7 variables.</div><div class="sasNote" id="sasLogNote10_1682781087922"> NOTE: DATA statement used (Total process time):</div><div class="sasNote">       real time           0.00 seconds</div><div class="sasNote">       user cpu time       0.00 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              949.93k</div><div class="sasNote">       OS Memory           28076.00k</div><div class="sasNote">       Timestamp           04/29/2023 03:11:28 PM</div><div class="sasNote">       Step Count                        203  Switch Count  2</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     135</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        11</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           264</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 117        </div><div class="sasSource"> 118        </div><div class="sasSource"> 119        proc sort data = frc1;</div><div class="sasSource"> 120        by date;</div><div class="sasSource"> 121        run;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote11_1682781087922"> NOTE: There were 19 observations read from the data set WORK.FRC1.</div><div class="sasNote" id="sasLogNote12_1682781087922"> NOTE: The data set WORK.FRC1 has 19 observations and 7 variables.</div><div class="sasNote" id="sasLogNote13_1682781087922"> NOTE: PROCEDURE SORT used (Total process time):</div><div class="sasNote">       real time           0.00 seconds</div><div class="sasNote">       user cpu time       0.00 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              1043.78k</div><div class="sasNote">       OS Memory           28076.00k</div><div class="sasNote">       Timestamp           04/29/2023 03:11:28 PM</div><div class="sasNote">       Step Count                        204  Switch Count  2</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     116</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        9</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           264</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 122        </div><div class="sasSource"> 123        data frc1;</div><div class="sasSource"> 124        set frc1;</div><div class="sasSource"> 125        frc_return = adj_close/lag(adj_close) - 1;</div><div class="sasSource"> 126        run;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote14_1682781087922"> NOTE: Missing values were generated as a result of performing an operation on missing values.</div><div class="sasNote">       Each place is given by: (Number of times) at (Line):(Column).</div><div class="sasNote">       1 at 125:23   </div><div class="sasNote" id="sasLogNote15_1682781087922"> NOTE: There were 19 observations read from the data set WORK.FRC1.</div><div class="sasNote" id="sasLogNote16_1682781087922"> NOTE: The data set WORK.FRC1 has 19 observations and 8 variables.</div><div class="sasNote" id="sasLogNote17_1682781087922"> NOTE: DATA statement used (Total process time):</div><div class="sasNote">       real time           0.00 seconds</div><div class="sasNote">       user cpu time       0.01 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              1131.65k</div><div class="sasNote">       OS Memory           28076.00k</div><div class="sasNote">       Timestamp           04/29/2023 03:11:28 PM</div><div class="sasNote">       Step Count                        205  Switch Count  2</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     129</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        9</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           264</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 127        </div><div class="sasSource"> 128        proc contents data = frc1;</div><div class="sasSource"> 129        run;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote18_1682781087922"> NOTE: PROCEDURE CONTENTS used (Total process time):</div><div class="sasNote">       real time           0.03 seconds</div><div class="sasNote">       user cpu time       0.04 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              1968.18k</div><div class="sasNote">       OS Memory           28076.00k</div><div class="sasNote">       Timestamp           04/29/2023 03:11:28 PM</div><div class="sasNote">       Step Count                        206  Switch Count  0</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     94</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        0</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           16</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 130        </div><div class="sasSource"> 131        </div><div class="sasSource"> 132        proc means data = frc1;</div><div class="sasSource"> 133        var frc_return;</div><div class="sasSource"> 134        output out = frc_stat mean = std = /autoname;</div><div class="sasSource"> 135        run;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote19_1682781087922"> NOTE: There were 19 observations read from the data set WORK.FRC1.</div><div class="sasNote" id="sasLogNote20_1682781087922"> NOTE: The data set WORK.FRC_STAT has 1 observations and 4 variables.</div><div class="sasNote" id="sasLogNote21_1682781087922"> NOTE: PROCEDURE MEANS used (Total process time):</div><div class="sasNote">       real time           0.01 seconds</div><div class="sasNote">       user cpu time       0.01 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              7172.93k</div><div class="sasNote">       OS Memory           34256.00k</div><div class="sasNote">       Timestamp           04/29/2023 03:11:28 PM</div><div class="sasNote">       Step Count                        207  Switch Count  3</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     1689</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        34</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           264</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 136        </div><div class="sasSource"> 137        proc univariate data=frc1 all;</div><div class="sasSource"> 138        var frc_return;</div><div class="sasSource"> 139        run;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote22_1682781087922"> NOTE: PROCEDURE UNIVARIATE used (Total process time):</div><div class="sasNote">       real time           0.34 seconds</div><div class="sasNote">       user cpu time       0.20 seconds</div><div class="sasNote">       system cpu time     0.01 seconds</div><div class="sasNote">       memory              9941.87k</div><div class="sasNote">       OS Memory           35420.00k</div><div class="sasNote">       Timestamp           04/29/2023 03:11:28 PM</div><div class="sasNote">       Step Count                        208  Switch Count  0</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     2054</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        224</div><div class="sasNote">       Involuntary Context Switches      1</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           744</div><div class="sasNote">       </div></div><div><div class="sasNote"> </div><div class="sasSource"> 140        </div><div class="sasSource"> 141        proc import</div><div class="sasSource"> 142        out = riskfree</div><div class="sasSource"> 143        datafile = "/home/u63347966/sasuser.v94/Final project/daily-treasury-rates (1).csv"</div><div class="sasSource"> 144        dbms = csv replace;</div><div class="sasSource"> 145        getnames = yes;</div><div class="sasSource"> 146        datarow = 2;</div><div class="sasSource"> 147        run;</div><div class="sasNote"> </div><div class="sasSource"> NOTE: Unable to open parameter catalog: SASUSER.PARMS.PARMS.SLIST in update mode. Temporary parameter values will be saved to </div><div class="sasSource"> WORK.PARMS.PARMS.SLIST.</div><div class="sasSource"> 148         /**********************************************************************</div><div class="sasSource"> 149         *   PRODUCT:   SAS</div><div class="sasSource"> 150         *   VERSION:   9.4</div><div class="sasSource"> 151         *   CREATOR:   External File Interface</div><div class="sasSource"> 152         *   DATE:      29APR23</div><div class="sasSource"> 153         *   DESC:      Generated SAS Datastep Code</div><div class="sasSource"> 154         *   TEMPLATE SOURCE:  (None Specified.)</div><div class="sasSource"> 155         ***********************************************************************/</div><div class="sasSource"> 156            data WORK.RISKFREE    ;</div><div class="sasSource"> 157            %let _EFIERR_ = 0; /* set the ERROR detection macro variable */</div><div class="sasSource"> 158            infile '/home/u63347966/sasuser.v94/Final project/daily-treasury-rates (1).csv' delimiter = ',' MISSOVER DSD</div><div class="sasSource"> 158      ! lrecl=32767 firstobs=2 ;</div><div class="sasSource"> 159               informat Date mmddyy10. ;</div><div class="sasSource"> 160               informat "1 Mo"N best32. ;</div><div class="sasSource"> 161               informat "2 Mo"N best32. ;</div><div class="sasSource"> 162               informat "3 Mo"N best32. ;</div><div class="sasSource"> 163               informat "4 Mo"N best32. ;</div><div class="sasSource"> 164               informat "6 Mo"N best32. ;</div><div class="sasSource"> 165               informat "1 Yr"N best32. ;</div><div class="sasSource"> 166               informat "2 Yr"N best32. ;</div><div class="sasSource"> 167               informat "3 Yr"N best32. ;</div><div class="sasSource"> 168               informat "5 Yr"N best32. ;</div><div class="sasSource"> 169               informat "7 Yr"N best32. ;</div><div class="sasSource"> 170               informat "10 Yr"N best32. ;</div><div class="sasSource"> 171               informat "20 Yr"N best32. ;</div><div class="sasSource"> 172               informat "30 Yr"N best32. ;</div><div class="sasSource"> 173               format Date mmddyy10. ;</div><div class="sasSource"> 174               format "1 Mo"N best12. ;</div><div class="sasSource"> 175               format "2 Mo"N best12. ;</div><div class="sasSource"> 176               format "3 Mo"N best12. ;</div><div class="sasSource"> 177               format "4 Mo"N best12. ;</div><div class="sasSource"> 178               format "6 Mo"N best12. ;</div><div class="sasSource"> 179               format "1 Yr"N best12. ;</div><div class="sasSource"> 180               format "2 Yr"N best12. ;</div><div class="sasSource"> 181               format "3 Yr"N best12. ;</div><div class="sasSource"> 182               format "5 Yr"N best12. ;</div><div class="sasSource"> 183               format "7 Yr"N best12. ;</div><div class="sasSource"> 184               format "10 Yr"N best12. ;</div><div class="sasSource"> 185               format "20 Yr"N best12. ;</div><div class="sasSource"> 186               format "30 Yr"N best12. ;</div><div class="sasSource"> 187            input</div><div class="sasSource"> 188                        Date</div><div class="sasSource"> 189                        "1 Mo"N</div><div class="sasSource"> 190                        "2 Mo"N</div><div class="sasSource"> 191                        "3 Mo"N</div><div class="sasSource"> 192                        "4 Mo"N</div><div class="sasSource"> 193                        "6 Mo"N</div><div class="sasSource"> 194                        "1 Yr"N</div><div class="sasSource"> 195                        "2 Yr"N</div><div class="sasSource"> 196                        "3 Yr"N</div><div class="sasSource"> 197                        "5 Yr"N</div><div class="sasSource"> 198                        "7 Yr"N</div><div class="sasSource"> 199                        "10 Yr"N</div><div class="sasSource"> 200                        "20 Yr"N</div><div class="sasSource"> 201                        "30 Yr"N</div><div class="sasSource"> 202            ;</div><div class="sasSource"> 203            if _ERROR_ then call symputx('_EFIERR_',1);  /* set ERROR detection macro variable */</div><div class="sasSource"> 204            run;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote23_1682781087922"> NOTE: The infile '/home/u63347966/sasuser.v94/Final project/daily-treasury-rates (1).csv' is:</div><div class="sasNote">       Filename=/home/u63347966/sasuser.v94/Final project/daily-treasury-rates (1).csv,</div><div class="sasNote">       Owner Name=u63347966,Group Name=oda,</div><div class="sasNote">       Access Permission=-rw-r--r--,</div><div class="sasNote">       Last Modified=27Apr2023:13:35:29,</div><div class="sasNote">       File Size (bytes)=1507</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote24_1682781087922"> NOTE: 20 records were read from the infile '/home/u63347966/sasuser.v94/Final project/daily-treasury-rates (1).csv'.</div><div class="sasNote">       The minimum record length was 65.</div><div class="sasNote">       The maximum record length was 72.</div><div class="sasNote" id="sasLogNote25_1682781087922"> NOTE: The data set WORK.RISKFREE has 20 observations and 14 variables.</div><div class="sasNote" id="sasLogNote26_1682781087922"> NOTE: DATA statement used (Total process time):</div><div class="sasNote">       real time           0.00 seconds</div><div class="sasNote">       user cpu time       0.00 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              9396.42k</div><div class="sasNote">       OS Memory           38940.00k</div><div class="sasNote">       Timestamp           04/29/2023 03:11:28 PM</div><div class="sasNote">       Step Count                        209  Switch Count  2</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     152</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        16</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           272</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 20 rows created in WORK.RISKFREE from /home/u63347966/sasuser.v94/Final project/daily-treasury-rates (1).csv.</div><div class="sasSource">   </div><div class="sasSource">   </div><div class="sasSource">   </div><div class="sasNote" id="sasLogNote27_1682781087922"> NOTE: WORK.RISKFREE data set was successfully created.</div><div class="sasNote" id="sasLogNote28_1682781087922"> NOTE: The data set WORK.RISKFREE has 20 observations and 14 variables.</div><div class="sasNote" id="sasLogNote29_1682781087922"> NOTE: PROCEDURE IMPORT used (Total process time):</div><div class="sasNote">       real time           0.05 seconds</div><div class="sasNote">       user cpu time       0.05 seconds</div><div class="sasNote">       system cpu time     0.01 seconds</div><div class="sasNote">       memory              9396.42k</div><div class="sasNote">       OS Memory           39200.00k</div><div class="sasNote">       Timestamp           04/29/2023 03:11:28 PM</div><div class="sasNote">       Step Count                        209  Switch Count  10</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     2521</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        102</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           288</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 205        </div><div class="sasSource"> 206        data work.riskfree1;</div><div class="sasSource"> 207        set work.riskfree;</div><div class="sasSource"> 208        rename 'Date'n = new_date;</div><div class="sasSource"> 209        rename '1 Mo'n = bc_1month;</div><div class="sasSource"> 210        run;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote30_1682781087922"> NOTE: There were 20 observations read from the data set WORK.RISKFREE.</div><div class="sasNote" id="sasLogNote31_1682781087922"> NOTE: The data set WORK.RISKFREE1 has 20 observations and 14 variables.</div><div class="sasNote" id="sasLogNote32_1682781087922"> NOTE: DATA statement used (Total process time):</div><div class="sasNote">       real time           0.00 seconds</div><div class="sasNote">       user cpu time       0.00 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              960.12k</div><div class="sasNote">       OS Memory           34988.00k</div><div class="sasNote">       Timestamp           04/29/2023 03:11:28 PM</div><div class="sasNote">       Step Count                        210  Switch Count  2</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     125</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        16</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           264</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 211        </div><div class="sasSource"> 212        data riskfree1;</div><div class="sasSource"> 213        set riskfree1;</div><div class="sasSource"> 214        Date = put(new_date, yymmdd10.);</div><div class="sasSource"> 215        format Date yymmdd10.;</div><div class="sasError">                        _________</div><div class="sasError">                        484</div><div class="sasNote" id="sasLogNote33_1682781087922"> NOTE 484-185: Format $YYMMDD was not found or could not be loaded.</div><div class="sasSource"> </div><div class="sasSource"> 216        t_dailyreturn = bc_1month/100/365;</div><div class="sasSource"> 217        run;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote34_1682781087922"> NOTE: There were 20 observations read from the data set WORK.RISKFREE1.</div><div class="sasNote" id="sasLogNote35_1682781087922"> NOTE: The data set WORK.RISKFREE1 has 20 observations and 16 variables.</div><div class="sasNote" id="sasLogNote36_1682781087922"> NOTE: DATA statement used (Total process time):</div><div class="sasNote">       real time           0.00 seconds</div><div class="sasNote">       user cpu time       0.00 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              1081.78k</div><div class="sasNote">       OS Memory           34988.00k</div><div class="sasNote">       Timestamp           04/29/2023 03:11:28 PM</div><div class="sasNote">       Step Count                        211  Switch Count  2</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     129</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        13</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           264</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 218        </div><div class="sasSource"> 219        proc contents data = riskfree1;</div><div class="sasSource"> 220        run;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote37_1682781087922"> NOTE: PROCEDURE CONTENTS used (Total process time):</div><div class="sasNote">       real time           0.04 seconds</div><div class="sasNote">       user cpu time       0.05 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              926.65k</div><div class="sasNote">       OS Memory           34988.00k</div><div class="sasNote">       Timestamp           04/29/2023 03:11:28 PM</div><div class="sasNote">       Step Count                        212  Switch Count  0</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     96</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        0</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           8</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 221        </div><div class="sasSource"> 222        proc means data = riskfree1;</div><div class="sasSource"> 223        var t_dailyreturn;</div><div class="sasSource"> 224        output out = tbill_stat (drop = _freq_ _type_) mean = /autoname;</div><div class="sasSource"> 225        run;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote38_1682781087922"> NOTE: There were 20 observations read from the data set WORK.RISKFREE1.</div><div class="sasNote" id="sasLogNote39_1682781087922"> NOTE: The data set WORK.TBILL_STAT has 1 observations and 1 variables.</div><div class="sasNote" id="sasLogNote40_1682781087922"> NOTE: PROCEDURE MEANS used (Total process time):</div><div class="sasNote">       real time           0.02 seconds</div><div class="sasNote">       user cpu time       0.01 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              7144.25k</div><div class="sasNote">       OS Memory           41168.00k</div><div class="sasNote">       Timestamp           04/29/2023 03:11:28 PM</div><div class="sasNote">       Step Count                        213  Switch Count  3</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     1689</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        35</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           280</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 226        </div><div class="sasSource"> 227        data ratio;</div><div class="sasSource"> 228        merge frc_stat tbill_stat;</div><div class="sasSource"> 229        run;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote41_1682781087922"> NOTE: There were 1 observations read from the data set WORK.FRC_STAT.</div><div class="sasNote" id="sasLogNote42_1682781087922"> NOTE: There were 1 observations read from the data set WORK.TBILL_STAT.</div><div class="sasNote" id="sasLogNote43_1682781087922"> NOTE: The data set WORK.RATIO has 1 observations and 5 variables.</div><div class="sasNote" id="sasLogNote44_1682781087922"> NOTE: DATA statement used (Total process time):</div><div class="sasNote">       real time           0.00 seconds</div><div class="sasNote">       user cpu time       0.00 seconds</div><div class="sasNote">       system cpu time     0.01 seconds</div><div class="sasNote">       memory              1304.96k</div><div class="sasNote">       OS Memory           35248.00k</div><div class="sasNote">       Timestamp           04/29/2023 03:11:28 PM</div><div class="sasNote">       Step Count                        214  Switch Count  2</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     164</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        13</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           264</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 230        </div><div class="sasSource"> 231        proc contents data = ratio;</div><div class="sasSource"> 232        run;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote45_1682781087922"> NOTE: PROCEDURE CONTENTS used (Total process time):</div><div class="sasNote">       real time           0.03 seconds</div><div class="sasNote">       user cpu time       0.03 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              797.81k</div><div class="sasNote">       OS Memory           34988.00k</div><div class="sasNote">       Timestamp           04/29/2023 03:11:28 PM</div><div class="sasNote">       Step Count                        215  Switch Count  0</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     99</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        0</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           8</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 233        </div><div class="sasSource"> 234        data ratio_sf_sharpe;</div><div class="sasSource"> 235        set ratio;</div><div class="sasSource"> 236        cv=frc_return_StdDev/frc_return_Mean;</div><div class="sasSource"> 237        acceptable_rate=0.03/365;/*I assume the annual acceptable rate is 0.03*/</div><div class="sasSource"> 238        sf_ratio=(frc_return_Mean-acceptable_rate)/frc_return_StdDev;</div><div class="sasSource"> 239        sharpe_ratio=(frc_return_Mean- t_dailyreturn_Mean)/frc_return_StdDev;</div><div class="sasSource"> 240        SFprobability=probnorm(-sf_ratio);</div><div class="sasSource"> 241        run;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote46_1682781087922"> NOTE: There were 1 observations read from the data set WORK.RATIO.</div><div class="sasNote" id="sasLogNote47_1682781087922"> NOTE: The data set WORK.RATIO_SF_SHARPE has 1 observations and 10 variables.</div><div class="sasNote" id="sasLogNote48_1682781087922"> NOTE: DATA statement used (Total process time):</div><div class="sasNote">       real time           0.00 seconds</div><div class="sasNote">       user cpu time       0.01 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              1063.59k</div><div class="sasNote">       OS Memory           34988.00k</div><div class="sasNote">       Timestamp           04/29/2023 03:11:28 PM</div><div class="sasNote">       Step Count                        216  Switch Count  2</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     126</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        11</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           264</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 242        </div><div class="sasSource"> 243        </div><div class="sasSource"> 244        </div><div class="sasSource"> 245        OPTIONS NONOTES NOSTIMER NOSOURCE NOSYNTAXCHECK;</div><div class="sasSource"> 255        </div></div></pre></div></div>
+<p>
+</div>
+<div>
+<hr><h3>Results: final_frc.sas</h3>
+<div id="div_c1a5f494-76c0-4c82-a175-9f1ae821bc61" class="ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61">
+
+
+<meta charset="utf-8">
+<meta content="SAS 9.4" name="generator">
+<title>Results: final_frc.sas</title>
+<style>
+/*<![CDATA[*/
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body.c section > table, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body.c section > pre, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body.c div > table,
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body.c div > pre, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body.c article > table, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body.c article > pre,
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body.j section > table, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body.j section > pre, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body.j div > table,
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body.j div > pre, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body.j article > table, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body.j article > pre,
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body.c p.note, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body.c p.warning, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body.c p.error, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body.c p.fatal,
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body.j p.note, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body.j p.warning, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body.j p.error, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body.j p.fatal,
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body.c > table.layoutcontainer, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body.j > table.layoutcontainer { margin-left: auto; margin-right: auto }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutregion.l table, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutregion.l pre, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutregion.l p.note,
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutregion.l p.warning, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutregion.l p.error, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutregion.l p.fatal { margin-left: 0 }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutregion.c table, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutregion.c pre, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutregion.c p.note,
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutregion.c p.warning, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutregion.c p.error, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutregion.c p.fatal { margin-left: auto; margin-right: auto }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutregion.r table, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutregion.r pre, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutregion.r p.note,
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutregion.r table, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutregion.r pre, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutregion.r p.note,
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutregion.r p.warning, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutregion.r p.error, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutregion.r p.fatal { margin-right: 0 }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 article, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 aside, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 details, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 figcaption, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 figure, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 footer, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 header, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 hgroup, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 nav, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 section { display: block }
+html.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 { font-size: 100% }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body { margin: 1em; font-size: 13px; line-height: 1.231 }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 sup { position: relative; vertical-align: baseline; bottom: 0.25em; font-size: 0.8em }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 sub { position: relative; vertical-align: baseline; top: 0.25em; font-size: 0.8em }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 ul, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 ol { margin: 1em 0; padding: 0 0 0 40px }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 dd { margin: 0 0 0 40px }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 nav ul, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0 }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 img { border: 0; vertical-align: middle }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 svg:not(:root) { overflow: hidden }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 figure { margin: 0 }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 table { border-collapse: collapse; border-spacing: 0 }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutcontainer { border-collapse: separate; border-spacing: 0 }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 p { margin-top: 0; text-align: left }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 h1.heading1 { text-align: left }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 h2.heading2 { text-align: left }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 h3.heading3 { text-align: left }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 h4.heading4 { text-align: left }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 h5.heading5 { text-align: left }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 h6.heading6 { text-align: left }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 span { text-align: left }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 table { margin-bottom: 1em }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 td, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 th { text-align: left; padding: 3px 6px; vertical-align: top }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 td[class$="fixed"], .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 th[class$="fixed"] { white-space: pre }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 section, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 article { padding-top: 1px; padding-bottom: 8px }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 hr.pagebreak { height: 0px; border: 0; border-bottom: 1px solid #c0c0c0; margin: 1em 0 }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .stacked-value { text-align: left; display: block }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .stacked-cell > .stacked-value, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 td.data > td.data, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 th.data > td.data, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 th.data > th.data, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 td.data > th.data, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 th.header > th.header { border: 0 }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .stacked-cell > div.data { border-width: 0 }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systitleandfootercontainer { white-space: nowrap; margin-bottom: 1em }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systitleandfootercontainer > p { margin: 0 }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systitleandfootercontainer > p > span { display: inline-block; width: 100%; white-space: normal }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .batch { display: table }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .toc { display: none }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .proc_note_group, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .proc_title_group { margin-bottom: 1em }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 p.proctitle { margin: 0 }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 p.note, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 p.warning, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 p.error, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 p.fatal { display: table }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .notebanner, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .warnbanner, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .errorbanner, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .fatalbanner,
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .notecontent, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .warncontent, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .errorcontent, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .fatalcontent { display: table-cell; padding: 0.5em }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .notebanner, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .warnbanner, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .errorbanner, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .fatalbanner { padding-right: 0 }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body > div > ol li { text-align: left }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .beforecaption > h4 { margin-top: 0; margin-bottom: 0 }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .c { text-align: center }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .r { text-align: right }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .l { text-align: left }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .j { text-align: justify }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .d { text-align: right }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .b { vertical-align: bottom }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .m { vertical-align: middle }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .t { vertical-align: top }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .accessiblecaption {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 a:active { color: #800080 }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .aftercaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    padding-top: 4pt;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .batch > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .batch > tbody, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .batch > thead, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .batch > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .batch { border: hidden; }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .batch {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    padding: 7px;
+    }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .beforecaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .body {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .bodydate {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: right;
+    vertical-align: top;
+    width: 100%;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .bycontentfolder {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .byline {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .bylinecontainer > col, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .bylinecontainer > colgroup > col, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .bylinecontainer > colgroup, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .bylinecontainer > tr, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .bylinecontainer > * > tr, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .bylinecontainer > thead, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .bylinecontainer > tbody, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .bylinecontainer > tfoot { border: none; }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .bylinecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .caption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .cell, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .container {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .contentfolder, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .contentitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .contentproclabel, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .contentprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .contents {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .contentsdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .contenttitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .continued {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    width: 100%;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .data, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .dataemphasis {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .dataemphasisfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .dataempty {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .datafixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .datastrong {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .datastrongfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .date {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .document {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .errorbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .errorcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .errorcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .extendedpage {
+    background-color: #fafbfe;
+    border-style: solid;
+    border-width: 1pt;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .fatalbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .fatalcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .fatalcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .folderaction {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .footer {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .footeremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .footeremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .footerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .footerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .footerstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .footerstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .frame {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .graph > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .graph > tbody, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .graph > thead, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .graph > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .graph { border: hidden; }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .graph {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .header {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .headeremphasis {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .headeremphasisfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .headerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .headerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .headersandfooters {
+    background-color: #edf2f9;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .headerstrong {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .headerstrongfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .heading1, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .heading2, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .heading3, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .heading4, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .heading5, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .heading6 { font-family: Arial, Helvetica, sans-serif }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .index {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .indexaction, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .indexitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .indexprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .indextitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutcontainer, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .layoutregion {
+    border-width: 0;
+    border-spacing: 30px;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .linecontent {
+    background-color: #fafbfe;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 a:link { color: #0000ff }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .list {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .list10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .list2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .list3, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .list4, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .list5, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .list6, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .list7, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .list8, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .list9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .listitem {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .listitem10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .listitem2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .listitem3, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .listitem4, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .listitem5, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .listitem6, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .listitem7, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .listitem8, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .listitem9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .note {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .notebanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .notecontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .notecontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .output > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .output > tbody, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .output > thead, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .output > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .output { border: hidden; }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .output {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .pageno {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    text-align: right;
+    vertical-align: top;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .pages {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .pagesdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .pagesitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .pagesproclabel, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .pagesprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .pagestitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .paragraph {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .parskip > col, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .parskip > colgroup > col, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .parskip > colgroup, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .parskip > tr, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .parskip > * > tr, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .parskip > thead, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .parskip > tbody, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .parskip > tfoot { border: none; }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .parskip {
+    border: none;
+    border-spacing: 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .prepage {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .proctitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .proctitlefixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .rowfooter {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .rowfooteremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .rowfooteremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .rowfooterempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .rowfooterfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .rowfooterstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .rowfooterstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .rowheader {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .rowheaderemphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .rowheaderemphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .rowheaderempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .rowheaderfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .rowheaderstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .rowheaderstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systemfooter, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systemfooter10, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systemfooter2, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systemfooter3, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systemfooter4, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systemfooter5, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systemfooter6, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systemfooter7, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systemfooter8, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systemfooter9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systemtitle, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systemtitle10, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systemtitle2, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systemtitle3, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systemtitle4, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systemtitle5, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systemtitle6, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systemtitle7, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systemtitle8, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systemtitle9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systitleandfootercontainer > col, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systitleandfootercontainer > colgroup > col, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systitleandfootercontainer > colgroup, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systitleandfootercontainer > tr, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systitleandfootercontainer > * > tr, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systitleandfootercontainer > thead, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systitleandfootercontainer > tbody, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systitleandfootercontainer > tfoot { border: none; }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .systitleandfootercontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .table > col, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .table > colgroup > col {
+    border-left: 1px solid #c1c1c1;
+    border-right: 0 solid #c1c1c1;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .table > tr, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .table > * > tr {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 0 solid #c1c1c1;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .table { border: hidden; }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .table {
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 1px 0 0 1px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .titleandnotecontainer > col, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .titleandnotecontainer > colgroup > col, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .titleandnotecontainer > colgroup, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .titleandnotecontainer > tr, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .titleandnotecontainer > * > tr, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .titleandnotecontainer > thead, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .titleandnotecontainer > tbody, .ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .titleandnotecontainer > tfoot { border: none; }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .titleandnotecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .titlesandfooters {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .usertext {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 a:visited { color: #800080 }
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .warnbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .warncontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_c1a5f494-76c0-4c82-a175-9f1ae821bc61 .warncontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+/*]]>*/
+</style>
+
+
+<div id="div_c1a5f494-76c0-4c82-a175-9f1ae821bc61" class="c body">
+<h1 class="body toc">Results: final_frc.sas</h1>
+<section data-name="Contents" data-sec-type="proc">
+<div id="IDX" class="proc_title_group">
+<p class="c proctitle">The CONTENTS Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Contents Procedure</h1>
+<section>
+<h1 class="contentfolder toc">WORK.FRC1</h1>
+<article aria-label="Attributes">
+<h1 class="contentitem toc">Attributes</h1>
+<table class="table" style="border-spacing: 0" aria-label="Attributes">
+<caption aria-label="Attributes"></caption>
+<colgroup><col><col><col><col></colgroup>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Data Set Name</th>
+<td class="data">WORK.FRC1</td>
+<th class="rowheader" scope="row">Observations</th>
+<td class="data">19</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Member Type</th>
+<td class="data">DATA</td>
+<th class="rowheader" scope="row">Variables</th>
+<td class="data">8</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Engine</th>
+<td class="data">V9</td>
+<th class="rowheader" scope="row">Indexes</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Created</th>
+<td class="data">04/29/2023 08:11:28</td>
+<th class="rowheader" scope="row">Observation Length</th>
+<td class="data">64</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Last Modified</th>
+<td class="data">04/29/2023 08:11:28</td>
+<th class="rowheader" scope="row">Deleted Observations</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protection</th>
+<td class="data">&nbsp;</td>
+<th class="rowheader" scope="row">Compressed</th>
+<td class="data">NO</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Data Set Type</th>
+<td class="data">&nbsp;</td>
+<th class="rowheader" scope="row">Sorted</th>
+<td class="data">NO</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Label</th>
+<td class="data">&nbsp;</td>
+<th class="rowheader" scope="row">&nbsp;</th>
+<td class="data">&nbsp;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Data Representation</th>
+<td class="data">SOLARIS_X86_64, LINUX_X86_64, ALPHA_TRU64, LINUX_IA64</td>
+<th class="rowheader" scope="row">&nbsp;</th>
+<td class="data">&nbsp;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Encoding</th>
+<td class="data">utf-8  Unicode (UTF-8)</td>
+<th class="rowheader" scope="row">&nbsp;</th>
+<td class="data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX1" aria-label="Engine/Host Information">
+<h1 class="contentitem toc">Engine/Host Information</h1>
+<table class="table" style="border-spacing: 0" aria-label="Engine/Host Information">
+<caption aria-label="Engine/Host Information"></caption>
+<colgroup><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Engine/Host Dependent Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Data Set Page Size</th>
+<td class="data">131072</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Number of Data Set Pages</th>
+<td class="data">1</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">First Data Page</th>
+<td class="data">1</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Max Obs per Page</th>
+<td class="data">2043</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Obs in First Data Page</th>
+<td class="data">19</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Number of Data Set Repairs</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Filename</th>
+<td class="data">/saswork/SAS_work84360000F5BD_odaws02-usw2-2.oda.sas.com/SAS_work9AB30000F5BD_odaws02-usw2-2.oda.sas.com/frc1.sas7bdat</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Release Created</th>
+<td class="data">9.0401M7</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Host Created</th>
+<td class="data">Linux</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Inode Number</th>
+<td class="data">134323232</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Access Permission</th>
+<td class="data">rw-r--r--</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Owner Name</th>
+<td class="data">u63347966</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">File Size</th>
+<td class="data">256KB</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">File Size (bytes)</th>
+<td class="data">262144</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX2" aria-label="Variables">
+<h1 class="contentitem toc">Variables</h1>
+<table class="table" style="border-spacing: 0" aria-label="Variables">
+<caption aria-label="Variables"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="6" scope="colgroup">Alphabetic List of Variables and Attributes</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">#</th>
+<th class="b header" scope="col">Variable</th>
+<th class="b header" scope="col">Type</th>
+<th class="r b header" scope="col">Len</th>
+<th class="b header" scope="col">Format</th>
+<th class="b header" scope="col">Informat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="data">Close</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="data">Date</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">YYMMDD10.</td>
+<td class="data">YYMMDD10.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="data">High</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="data">Low</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="data">Open</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">7</th>
+<td class="data">Volume</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">6</th>
+<td class="data">adj_close</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">8</th>
+<td class="data">frc_return</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="Means" data-sec-type="proc">
+<hr class="pagebreak">
+<div id="IDX3" class="proc_title_group">
+<p class="c proctitle">The MEANS Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Means Procedure</h1>
+<article aria-label="Summary statistics">
+<h1 class="contentitem toc">Summary statistics</h1>
+<table class="table" style="border-spacing: 0" aria-label="Summary statistics">
+<caption aria-label="Summary statistics"></caption>
+<colgroup><col><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Analysis Variable : frc_return</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">N</th>
+<th class="r b header" scope="col">Mean</th>
+<th class="r b header" scope="col">Std Dev</th>
+<th class="r b header" scope="col">Minimum</th>
+<th class="r b header" scope="col">Maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">18</td>
+<td class="r data">0.0026465</td>
+<td class="r data">0.0444511</td>
+<td class="r data" style="white-space: nowrap">-0.0554795</td>
+<td class="r data">0.1240064</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section data-name="Univariate" data-sec-type="proc">
+<hr class="pagebreak">
+<div id="IDX4" class="proc_title_group">
+<p class="c proctitle">The UNIVARIATE Procedure</p>
+<p class="c proctitle">Variable:  frc_return</p>
+</div>
+<h1 class="contentprocname toc">The Univariate Procedure</h1>
+<section>
+<h1 class="contentfolder toc">frc_return</h1>
+<article aria-label="Moments">
+<h1 class="contentitem toc">Moments</h1>
+<table class="table" style="border-spacing: 0" aria-label="Moments">
+<caption aria-label="Moments"></caption>
+<colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Moments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">N</th>
+<td class="r data">18</td>
+<th class="rowheader" scope="row">Sum Weights</th>
+<td class="r data">18</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Mean</th>
+<td class="r data">0.0026465</td>
+<th class="rowheader" scope="row">Sum Observations</th>
+<td class="r data">0.04763705</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Std Deviation</th>
+<td class="r data">0.04445114</td>
+<th class="rowheader" scope="row">Variance</th>
+<td class="r data">0.0019759</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Skewness</th>
+<td class="r data">1.21296946</td>
+<th class="rowheader" scope="row">Kurtosis</th>
+<td class="r data">1.84724261</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Uncorrected SS</th>
+<td class="r data">0.03371644</td>
+<th class="rowheader" scope="row">Corrected SS</th>
+<td class="r data">0.03359036</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Coeff Variation</th>
+<td class="r data">1679.61798</td>
+<th class="rowheader" scope="row">Std Error Mean</th>
+<td class="r data">0.01047723</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX5" aria-label="Basic Measures of Location and Variability">
+<h1 class="contentitem toc">Basic Measures of Location and Variability</h1>
+<table class="table" style="border-spacing: 0" aria-label="Basic Measures of Location and Variability">
+<caption aria-label="Basic Measures of Location and Variability"></caption>
+<colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Basic Statistical Measures</th>
+</tr>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Location</th>
+<th class="c b header" colspan="2" scope="colgroup">Variability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Mean</th>
+<td class="r data">0.00265</td>
+<th class="rowheader" scope="row">Std Deviation</th>
+<td class="r data">0.04445</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Median</th>
+<td class="r data" style="white-space: nowrap">-0.00866</td>
+<th class="rowheader" scope="row">Variance</th>
+<td class="r data">0.00198</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Mode</th>
+<td class="r data">.</td>
+<th class="rowheader" scope="row">Range</th>
+<td class="r data">0.17949</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&nbsp;</th>
+<td class="r data">&nbsp;</td>
+<th class="rowheader" scope="row">Interquartile Range</th>
+<td class="r data">0.05276</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX6" aria-label="Modes">
+<h1 class="contentitem toc">Modes</h1>
+<table class="table" style="border-spacing: 0" aria-label="Modes">
+<caption aria-label="Modes"></caption>
+<colgroup><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Modes</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Mode</th>
+<th class="r b header" scope="col">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">.</td>
+<td class="r data">.</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX7" aria-label="Basic Confidence Limits">
+<h1 class="contentitem toc">Basic Confidence Limits</h1>
+<table class="table" style="border-spacing: 0" aria-label="Basic Confidence Limits">
+<caption aria-label="Basic Confidence Limits"></caption>
+<colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Basic Confidence Limits Assuming Normality</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Parameter</th>
+<th class="r b header" scope="col">Estimate</th>
+<th class="c b header" colspan="2" scope="colgroup">95%&nbsp;Confidence&nbsp;Limits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Mean</th>
+<td class="r data">0.00265</td>
+<td class="r data" style="white-space: nowrap">-0.01946</td>
+<td class="r data">0.02475</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Std Deviation</th>
+<td class="r data">0.04445</td>
+<td class="r data">0.03336</td>
+<td class="r data">0.06664</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Variance</th>
+<td class="r data">0.00198</td>
+<td class="r data">0.00111</td>
+<td class="r data">0.00444</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX8" aria-label="Tests For Location">
+<h1 class="contentitem toc">Tests For Location</h1>
+<table class="table" style="border-spacing: 0" aria-label="Tests For Location">
+<caption aria-label="Tests For Location"></caption>
+<colgroup><col><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Tests&nbsp;for&nbsp;Location:&nbsp;Mu0=0</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Test</th>
+<th class="c b header" colspan="2" scope="colgroup">Statistic</th>
+<th class="c b header" colspan="2" scope="colgroup">p Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Student's t</th>
+<th class="rowheader" scope="row">t</th>
+<td class="r data">0.252596</td>
+<th class="rowheader" scope="row">Pr &gt; |t|</th>
+<td class="r data">0.8036</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Sign</th>
+<th class="rowheader" scope="row">M</th>
+<td class="r data" style="white-space: nowrap">-1</td>
+<th class="rowheader" scope="row">Pr &gt;= |M|</th>
+<td class="r data">0.8145</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Signed Rank</th>
+<th class="rowheader" scope="row">S</th>
+<td class="r data" style="white-space: nowrap">-1.5</td>
+<th class="rowheader" scope="row">Pr &gt;= |S|</th>
+<td class="r data">0.9661</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX9" aria-label="Location Counts">
+<h1 class="contentitem toc">Location Counts</h1>
+<table class="table" style="border-spacing: 0" aria-label="Location Counts">
+<caption aria-label="Location Counts"></caption>
+<colgroup><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Location&nbsp;Counts:&nbsp;Mu0=0.00</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Count</th>
+<th class="r b header" scope="col">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Num Obs &gt; Mu0</th>
+<td class="r data">8</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Num Obs ^= Mu0</th>
+<td class="r data">18</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Num Obs &lt; Mu0</th>
+<td class="r data">10</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX10" aria-label="Tests For Normality">
+<h1 class="contentitem toc">Tests For Normality</h1>
+<table class="table" style="border-spacing: 0" aria-label="Tests For Normality">
+<caption aria-label="Tests For Normality"></caption>
+<colgroup><col><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Tests for Normality</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Test</th>
+<th class="c b header" colspan="2" scope="colgroup">Statistic</th>
+<th class="c b header" colspan="2" scope="colgroup">p Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Shapiro-Wilk</th>
+<th class="rowheader" scope="row">W</th>
+<td class="r data">0.91159</td>
+<th class="rowheader" scope="row">Pr &lt; W</th>
+<td class="r data">0.0918</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Kolmogorov-Smirnov</th>
+<th class="rowheader" scope="row">D</th>
+<td class="r data">0.15593</td>
+<th class="rowheader" scope="row">Pr &gt; D</th>
+<td class="r data">&gt;0.1500</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Cramer-von Mises</th>
+<th class="rowheader" scope="row">W-Sq</th>
+<td class="r data">0.07265</td>
+<th class="rowheader" scope="row">Pr &gt; W-Sq</th>
+<td class="r data">0.2461</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Anderson-Darling</th>
+<th class="rowheader" scope="row">A-Sq</th>
+<td class="r data">0.497708</td>
+<th class="rowheader" scope="row">Pr &gt; A-Sq</th>
+<td class="r data">0.1930</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX11" aria-label="Trimmed Means">
+<h1 class="contentitem toc">Trimmed Means</h1>
+<table class="table" style="border-spacing: 0" aria-label="Trimmed Means">
+<caption aria-label="Trimmed Means"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="9" scope="colgroup">Trimmed Means</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Percent<br>Trimmed<br>in Tail</th>
+<th class="r b header" scope="col">Number<br>Trimmed<br>in Tail</th>
+<th class="r b header" scope="col">Trimmed<br>Mean</th>
+<th class="r b header" scope="col">Std Error<br>Trimmed<br>Mean</th>
+<th class="c b header" colspan="2" scope="colgroup">95%&nbsp;Confidence&nbsp;Limits</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">t for H0:<br>Mu0=0.00</th>
+<th class="r b header" scope="col">Pr&nbsp;&gt;&nbsp;|t|</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">27.78</th>
+<td class="r data">5</td>
+<td class="r data" style="white-space: nowrap">-0.00601</td>
+<td class="r data">0.011242</td>
+<td class="r data" style="white-space: nowrap">-0.03259</td>
+<td class="r data">0.020572</td>
+<td class="r data">7</td>
+<td class="r data" style="white-space: nowrap">-0.53473</td>
+<td class="r data">0.6094</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX12" aria-label="Winsorized Means">
+<h1 class="contentitem toc">Winsorized Means</h1>
+<table class="table" style="border-spacing: 0" aria-label="Winsorized Means">
+<caption aria-label="Winsorized Means"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="9" scope="colgroup">Winsorized Means</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Percent<br>Winsorized<br>in Tail</th>
+<th class="r b header" scope="col">Number<br>Winsorized<br>in Tail</th>
+<th class="r b header" scope="col">Winsorized<br>Mean</th>
+<th class="r b header" scope="col">Std Error<br>Winsorized<br>Mean</th>
+<th class="c b header" colspan="2" scope="colgroup">95%&nbsp;Confidence&nbsp;Limits</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">t for H0:<br>Mu0=0.00</th>
+<th class="r b header" scope="col">Pr&nbsp;&gt;&nbsp;|t|</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">27.78</th>
+<td class="r data">5</td>
+<td class="r data" style="white-space: nowrap">-0.00302</td>
+<td class="r data">0.011680</td>
+<td class="r data" style="white-space: nowrap">-0.03063</td>
+<td class="r data">0.024601</td>
+<td class="r data">7</td>
+<td class="r data" style="white-space: nowrap">-0.25827</td>
+<td class="r data">0.8036</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX13" aria-label="Robust Measures of Scale">
+<h1 class="contentitem toc">Robust Measures of Scale</h1>
+<table class="table" style="border-spacing: 0" aria-label="Robust Measures of Scale">
+<caption aria-label="Robust Measures of Scale"></caption>
+<colgroup><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="3" scope="colgroup">Robust Measures of Scale</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Measure</th>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Estimate<br>of Sigma</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Interquartile Range</th>
+<td class="r data">0.052758</td>
+<td class="r data">0.039110</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Gini's Mean Difference</th>
+<td class="r data">0.049151</td>
+<td class="r data">0.043559</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">MAD</th>
+<td class="r data">0.028958</td>
+<td class="r data">0.042934</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Sn</th>
+<td class="r data">0.040950</td>
+<td class="r data">0.040950</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Qn</th>
+<td class="r data">0.046740</td>
+<td class="r data">0.038593</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX14" aria-label="Quantiles">
+<h1 class="contentitem toc">Quantiles</h1>
+<table class="table" style="border-spacing: 0" aria-label="Quantiles">
+<caption aria-label="Quantiles"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="9" scope="colgroup">Quantiles&nbsp;(Definition&nbsp;5)</th>
+</tr>
+<tr>
+<th class="b header" rowspan="2" scope="col">Level</th>
+<th class="r b header" rowspan="2" scope="col">Quantile</th>
+<th class="c headerempty" colspan="4" scope="colgroup">&nbsp;</th>
+<th class="c b header" colspan="3" scope="colgroup">Order Statistics</th>
+</tr>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">95% Confidence Limits<br>Assuming Normality</th>
+<th class="c b header" colspan="2" scope="colgroup">95% Confidence Limits<br>Distribution Free</th>
+<th class="r b header" scope="col">LCL Rank</th>
+<th class="r b header" scope="col">UCL Rank</th>
+<th class="r b header" scope="col">Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">100% Max</th>
+<td class="r data">0.12400636</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">&nbsp;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">99%</th>
+<td class="r data">0.12400636</td>
+<td class="r data">0.07487</td>
+<td class="r data">0.16385</td>
+<td class="r data">.</td>
+<td class="r data">.</td>
+<td class="r data">.</td>
+<td class="r data">.</td>
+<td class="r data">.</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">95%</th>
+<td class="r data">0.12400636</td>
+<td class="r data">0.05025</td>
+<td class="r data">0.12043</td>
+<td class="r data">0.04389881</td>
+<td class="r data">0.1240064</td>
+<td class="r data">16</td>
+<td class="r data">18</td>
+<td class="r data">54.47</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">90%</th>
+<td class="r data">0.05629630</td>
+<td class="r data">0.03655</td>
+<td class="r data">0.09781</td>
+<td class="r data">0.02737752</td>
+<td class="r data">0.1240064</td>
+<td class="r data">14</td>
+<td class="r data">18</td>
+<td class="r data">82.17</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">75% Q3</th>
+<td class="r data">0.02737752</td>
+<td class="r data">0.01199</td>
+<td class="r data">0.06148</td>
+<td class="r data" style="white-space: nowrap">-0.00211864</td>
+<td class="r data">0.1240064</td>
+<td class="r data">10</td>
+<td class="r data">18</td>
+<td class="r data">97.50</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">50% Median</th>
+<td class="r data" style="white-space: nowrap">-0.00865701</td>
+<td class="r data" style="white-space: nowrap">-0.01946</td>
+<td class="r data">0.02475</td>
+<td class="r data" style="white-space: nowrap">-0.02538071</td>
+<td class="r data">0.0273775</td>
+<td class="r data">5</td>
+<td class="r data">14</td>
+<td class="r data">96.91</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">25% Q1</th>
+<td class="r data" style="white-space: nowrap">-0.02538071</td>
+<td class="r data" style="white-space: nowrap">-0.05619</td>
+<td class="r data" style="white-space: nowrap">-0.00670</td>
+<td class="r data" style="white-space: nowrap">-0.05547945</td>
+<td class="r data" style="white-space: nowrap">-0.0151954</td>
+<td class="r data">1</td>
+<td class="r data">9</td>
+<td class="r data">97.50</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">10%</th>
+<td class="r data" style="white-space: nowrap">-0.04261796</td>
+<td class="r data" style="white-space: nowrap">-0.09252</td>
+<td class="r data" style="white-space: nowrap">-0.03126</td>
+<td class="r data" style="white-space: nowrap">-0.05547945</td>
+<td class="r data" style="white-space: nowrap">-0.0253807</td>
+<td class="r data">1</td>
+<td class="r data">5</td>
+<td class="r data">82.17</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">5%</th>
+<td class="r data" style="white-space: nowrap">-0.05547945</td>
+<td class="r data" style="white-space: nowrap">-0.11514</td>
+<td class="r data" style="white-space: nowrap">-0.04495</td>
+<td class="r data" style="white-space: nowrap">-0.05547945</td>
+<td class="r data" style="white-space: nowrap">-0.0399719</td>
+<td class="r data">1</td>
+<td class="r data">3</td>
+<td class="r data">54.47</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">1%</th>
+<td class="r data" style="white-space: nowrap">-0.05547945</td>
+<td class="r data" style="white-space: nowrap">-0.15856</td>
+<td class="r data" style="white-space: nowrap">-0.06957</td>
+<td class="r data">.</td>
+<td class="r data">.</td>
+<td class="r data">.</td>
+<td class="r data">.</td>
+<td class="r data">.</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">0% Min</th>
+<td class="r data" style="white-space: nowrap">-0.05547945</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX15" aria-label="Extreme Observations">
+<h1 class="contentitem toc">Extreme Observations</h1>
+<table class="table" style="border-spacing: 0" aria-label="Extreme Observations">
+<caption aria-label="Extreme Observations"></caption>
+<colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Extreme Observations</th>
+</tr>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Lowest</th>
+<th class="c b header" colspan="2" scope="colgroup">Highest</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Obs</th>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Obs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data" style="white-space: nowrap">-0.0554795</td>
+<td class="r data">7</td>
+<td class="r data">0.0273775</td>
+<td class="r data">19</td>
+</tr>
+<tr>
+<td class="r data" style="white-space: nowrap">-0.0426180</td>
+<td class="r data">16</td>
+<td class="r data">0.0436026</td>
+<td class="r data">6</td>
+</tr>
+<tr>
+<td class="r data" style="white-space: nowrap">-0.0399719</td>
+<td class="r data">4</td>
+<td class="r data">0.0438988</td>
+<td class="r data">9</td>
+</tr>
+<tr>
+<td class="r data" style="white-space: nowrap">-0.0360029</td>
+<td class="r data">14</td>
+<td class="r data">0.0562963</td>
+<td class="r data">3</td>
+</tr>
+<tr>
+<td class="r data" style="white-space: nowrap">-0.0253807</td>
+<td class="r data">8</td>
+<td class="r data">0.1240064</td>
+<td class="r data">17</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX16" aria-label="Extreme Values">
+<h1 class="contentitem toc">Extreme Values</h1>
+<table class="table" style="border-spacing: 0" aria-label="Extreme Values">
+<caption aria-label="Extreme Values"></caption>
+<colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Extreme Values</th>
+</tr>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Lowest</th>
+<th class="c b header" colspan="2" scope="colgroup">Highest</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Order</th>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Order</th>
+<th class="r b header" scope="col">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-0.0554795</td>
+<td class="r data">14</td>
+<td class="r data">0.0273775</td>
+</tr>
+<tr>
+<td class="r data">2</td>
+<td class="r data" style="white-space: nowrap">-0.0426180</td>
+<td class="r data">15</td>
+<td class="r data">0.0436026</td>
+</tr>
+<tr>
+<td class="r data">3</td>
+<td class="r data" style="white-space: nowrap">-0.0399719</td>
+<td class="r data">16</td>
+<td class="r data">0.0438988</td>
+</tr>
+<tr>
+<td class="r data">4</td>
+<td class="r data" style="white-space: nowrap">-0.0360029</td>
+<td class="r data">17</td>
+<td class="r data">0.0562963</td>
+</tr>
+<tr>
+<td class="r data">5</td>
+<td class="r data" style="white-space: nowrap">-0.0253807</td>
+<td class="r data">18</td>
+<td class="r data">0.1240064</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX17" aria-label="Missing Values">
+<h1 class="contentitem toc">Missing Values</h1>
+<table class="table" style="border-spacing: 0" aria-label="Missing Values">
+<caption aria-label="Missing Values"></caption>
+<colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Missing Values</th>
+</tr>
+<tr>
+<th class="r b header" rowspan="2" scope="col">Missing<br>Value</th>
+<th class="r b header" rowspan="2" scope="col">Count</th>
+<th class="c b header" colspan="2" scope="colgroup">Percent Of</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">All Obs</th>
+<th class="r b header" scope="col">Missing Obs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">.</td>
+<td class="r data">1</td>
+<td class="r data">5.26</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX18" aria-label="Frequencies">
+<h1 class="contentitem toc">Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="Frequencies">
+<caption aria-label="Frequencies"></caption>
+<colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Frequency Counts</th>
+</tr>
+<tr>
+<th class="r b header" rowspan="2" scope="col">Value</th>
+<th class="r b header" rowspan="2" scope="col">Count</th>
+<th class="c b header" colspan="2" scope="colgroup">Percents</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Cell</th>
+<th class="r b header" scope="col">Cum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data" style="white-space: nowrap">-0.05547945205</td>
+<td class="r data">1</td>
+<td class="r data">5.6</td>
+<td class="r data">5.6</td>
+</tr>
+<tr>
+<td class="r data" style="white-space: nowrap">-0.04261796043</td>
+<td class="r data">1</td>
+<td class="r data">5.6</td>
+<td class="r data">11.1</td>
+</tr>
+<tr>
+<td class="r data" style="white-space: nowrap">-0.03997194951</td>
+<td class="r data">1</td>
+<td class="r data">5.6</td>
+<td class="r data">16.7</td>
+</tr>
+<tr>
+<td class="r data" style="white-space: nowrap">-0.03600293902</td>
+<td class="r data">1</td>
+<td class="r data">5.6</td>
+<td class="r data">22.2</td>
+</tr>
+<tr>
+<td class="r data" style="white-space: nowrap">-0.02538071066</td>
+<td class="r data">1</td>
+<td class="r data">5.6</td>
+<td class="r data">27.8</td>
+</tr>
+<tr>
+<td class="r data" style="white-space: nowrap">-0.02315484805</td>
+<td class="r data">1</td>
+<td class="r data">5.6</td>
+<td class="r data">33.3</td>
+</tr>
+<tr>
+<td class="r data" style="white-space: nowrap">-0.02193913659</td>
+<td class="r data">1</td>
+<td class="r data">5.6</td>
+<td class="r data">38.9</td>
+</tr>
+<tr>
+<td class="r data" style="white-space: nowrap">-0.01838755304</td>
+<td class="r data">1</td>
+<td class="r data">5.6</td>
+<td class="r data">44.4</td>
+</tr>
+<tr>
+<td class="r data" style="white-space: nowrap">-0.01519536903</td>
+<td class="r data">1</td>
+<td class="r data">5.6</td>
+<td class="r data">50.0</td>
+</tr>
+<tr>
+<td class="r data" style="white-space: nowrap">-0.00211864407</td>
+<td class="r data">1</td>
+<td class="r data">5.6</td>
+<td class="r data">55.6</td>
+</tr>
+<tr>
+<td class="r data">0.00152439024</td>
+<td class="r data">1</td>
+<td class="r data">5.6</td>
+<td class="r data">61.1</td>
+</tr>
+<tr>
+<td class="r data">0.00926585887</td>
+<td class="r data">1</td>
+<td class="r data">5.6</td>
+<td class="r data">66.7</td>
+</tr>
+<tr>
+<td class="r data">0.02191380570</td>
+<td class="r data">1</td>
+<td class="r data">5.6</td>
+<td class="r data">72.2</td>
+</tr>
+<tr>
+<td class="r data">0.02737752161</td>
+<td class="r data">1</td>
+<td class="r data">5.6</td>
+<td class="r data">77.8</td>
+</tr>
+<tr>
+<td class="r data">0.04360257327</td>
+<td class="r data">1</td>
+<td class="r data">5.6</td>
+<td class="r data">83.3</td>
+</tr>
+<tr>
+<td class="r data">0.04389880952</td>
+<td class="r data">1</td>
+<td class="r data">5.6</td>
+<td class="r data">88.9</td>
+</tr>
+<tr>
+<td class="r data">0.05629629630</td>
+<td class="r data">1</td>
+<td class="r data">5.6</td>
+<td class="r data">94.4</td>
+</tr>
+<tr>
+<td class="r data">0.12400635930</td>
+<td class="r data">1</td>
+<td class="r data">5.6</td>
+<td class="r data">100.0</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX19" aria-label="Plots for frc_return">
+<h1 class="contentitem toc">Plots for frc_return</h1>
+<div class="c">
+<img style="height: 640px; width: 640px" alt="Plots for frc_return" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAKACAIAAACDr150AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAgAElEQVR4nOzdeViU973///ewCTKKKK5owA0GEFCQIbEaGZqfqZKk8SSpNjmxipjmStLaamKaqk1yqkmuZjnxfHs46mmdmF5NerXpXmiatqAx24AbUGFwAZcoahRQGHaY3x+3h1J2mIHPMPN8/OF1cy+fec89MC/v933P3LqCggIBAADDy0dE4uLiVJcBAIAHKSws9FJdAwAAnogABgBAAQIYAAAFCGAAABQggAEAUIAABgBAAQIYAAAFCGAAABQggAEAUIAABgBAAQIYAAAFCGAAABQggN2crgO9Xr9o0aJ33nmn4wqLFy9esmSJg4/ScRDtsZw4oCvo6Ul13L2BgYEJCQm/+tWvnPsQg9ukp1fEkR3b+5N1/HX/6KOPYmNjfXx8Zs6c6QrjAEONAPYgNpvt008/feSRR55++un2ma2trX1u2Od7a38GGdBDOD7g8Kurqzt27NjXvva1Dz74QHUtPe7AjvMdicxBP9leHvSxxx77xz/+0drampKSMriqnDvO4DjlP6DwFAUFBXa4L+1V1qbLysqeeeYZLy8vEfnLX/4yuEGcu7KDWw2bnsrrOP/mzZs/+MEPROTLX/6yEx/C8U36U/xAH67rk3WwGLvdrv1mnjt3rv8lDek4g+Piv8lwHQUFBQSwm+v6dvCtb31LRO65556uK5w8efKee+4ZP378+PHjly1b9ve//719hXbtc4qKimbNmhUeHt5pEG06KytrxowZt99++yeffNJTMZ0G7PoQ7Wvu27dv7ty5vr6+c+fO3b9/f6cR3nnnnXnz5gUGBqakpJSVlXXdCYcOHVq5cmVwcPC4ceP+7d/+raKioj+b79mzZ+LEiVOmTHnrrbf6mWE3b94UkbFjx3Zc2nFH9flcut1vvdff567udrrTPtfpdEFBQU1NTXa7vaamZvTo0d7e3leuXBnok+39Jev6QncafECve6cd29M43a786aef3n333WPHjh03blxqauoHH3xg71m3I5w4ceLBBx8MCQm55557ioqKenqCnZ5R74Vpc/r8fYZ7IIDdX9d3uuLiYhGZOHFi1xUSEhI6vn10fFPo+p6yePFiEVm7dq29u7cVPz8/bcLX17f93a2nN6Pe37b+9Kc/dVrh/fff7zhCR8uWLeu6E8LCwjqu88ADD/S5+d/+9rf2md7e3p0q73b31tTUaAeFsbGxHZd23FF9Ppdu91vv9fe5q7ud7lRGcnKyiGib/+xnPxORu+66axBPtveXrNPMroP3Z5Bud2wv43Rd+aOPPvL19e245h133NH1xe00ZscR8vPz/f392zcPDAzMz8/v9gl2eqa9FyZddPv7DPdAALu/ru90TU1NOp3O19e36wpBQUEi8qMf/ejChQv79u17+umnux1E+3Hu3Lnnz5/vuoI2/fLLL1dVVT333HMiYjQaexmnz0Vf+tKXRGT79u03btx49tlnRWTJkiUdV3v88ccrKyvfe+897a2w607YtGnT//zP/9y8efOzzz4TkfHjx/e5+Ze//GURefbZZ6uqqnbt2tV1N3YcoZOf/vSnPe2oPp9Lt/ut9/r73NX9mX755ZdF5Mknn7Tb7V/5ylc6PosBPdl+Ps2ue7Lroj4H6bhjexmn68raueF///d/v379utVqTUlJ+eUvf9ltST2NcNddd4nI22+/XV9f//Of/1x6aCn1/mPXYbU5ff4+wz0QwO6v6/tdQ0ODt7f3lClTuq7wn//5n9r5sylTpvzsZz/raRDtx45nkXt6W6+qqhIRvV7fyzh9LgoODhaR6upqu91eWVkpXRKora3Nbrc3NTX19OZus9m2b98eGxsbGBjY9UG73XzixIkiUllZ2dNu7DhfM3r06AULFrz11lu97Kg+n0u3+633+vvc1f2ZtlqtIjJjxowrV674+Pj4+flVVVUN4skO6Gl2O37/91VP1zF0+7vUceXRo0eLyNWrV7Uf6+vrW1pauh2qpxEmTJgg/2rChAm9PHq3P3YdVpvT5+8z3AMB7P66/g1rx3MPPfRQtyscP3589erVWtP1ueee63adrmP29LZ+7do16fC/eG1Rc3Nz71vZu3s31/Lg+vXr/X+za/fQQw91ervsc/OxY8fK/7379zJy72+RXZf287l02m/9qb/bXd3/abvdbjAYRGTdunUict999znyZPv/kvUy/uAG6bq068paALef4W5oaOhPAHcdoSOdTtfLo/fnd74/lcOdFBQU8DEkD1JWVrZp06ZNmzZ5eXlt2rSp6wpbtmwpLS393//939/97nci8uMf/1ibr+VxQUFB/x/rv/7rv27cuPHKK6+IyPz587WZ2tvW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">
+</div>
+</article>
+</section>
+</section>
+<section data-name="Contents" data-sec-type="proc">
+<hr class="pagebreak">
+<div id="IDX20" class="proc_title_group">
+<p class="c proctitle">The CONTENTS Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Contents Procedure</h1>
+<section>
+<h1 class="contentfolder toc">WORK.RISKFREE1</h1>
+<article aria-label="Attributes">
+<h1 class="contentitem toc">Attributes</h1>
+<table class="table" style="border-spacing: 0" aria-label="Attributes">
+<caption aria-label="Attributes"></caption>
+<colgroup><col><col><col><col></colgroup>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Data Set Name</th>
+<td class="data">WORK.RISKFREE1</td>
+<th class="rowheader" scope="row">Observations</th>
+<td class="data">20</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Member Type</th>
+<td class="data">DATA</td>
+<th class="rowheader" scope="row">Variables</th>
+<td class="data">16</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Engine</th>
+<td class="data">V9</td>
+<th class="rowheader" scope="row">Indexes</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Created</th>
+<td class="data">04/29/2023 08:11:29</td>
+<th class="rowheader" scope="row">Observation Length</th>
+<td class="data">136</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Last Modified</th>
+<td class="data">04/29/2023 08:11:29</td>
+<th class="rowheader" scope="row">Deleted Observations</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protection</th>
+<td class="data">&nbsp;</td>
+<th class="rowheader" scope="row">Compressed</th>
+<td class="data">NO</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Data Set Type</th>
+<td class="data">&nbsp;</td>
+<th class="rowheader" scope="row">Sorted</th>
+<td class="data">NO</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Label</th>
+<td class="data">&nbsp;</td>
+<th class="rowheader" scope="row">&nbsp;</th>
+<td class="data">&nbsp;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Data Representation</th>
+<td class="data">SOLARIS_X86_64, LINUX_X86_64, ALPHA_TRU64, LINUX_IA64</td>
+<th class="rowheader" scope="row">&nbsp;</th>
+<td class="data">&nbsp;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Encoding</th>
+<td class="data">utf-8  Unicode (UTF-8)</td>
+<th class="rowheader" scope="row">&nbsp;</th>
+<td class="data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX21" aria-label="Engine/Host Information">
+<h1 class="contentitem toc">Engine/Host Information</h1>
+<table class="table" style="border-spacing: 0" aria-label="Engine/Host Information">
+<caption aria-label="Engine/Host Information"></caption>
+<colgroup><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Engine/Host Dependent Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Data Set Page Size</th>
+<td class="data">131072</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Number of Data Set Pages</th>
+<td class="data">1</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">First Data Page</th>
+<td class="data">1</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Max Obs per Page</th>
+<td class="data">962</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Obs in First Data Page</th>
+<td class="data">20</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Number of Data Set Repairs</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Filename</th>
+<td class="data">/saswork/SAS_work84360000F5BD_odaws02-usw2-2.oda.sas.com/SAS_work9AB30000F5BD_odaws02-usw2-2.oda.sas.com/riskfree1.sas7bdat</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Release Created</th>
+<td class="data">9.0401M7</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Host Created</th>
+<td class="data">Linux</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Inode Number</th>
+<td class="data">134323266</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Access Permission</th>
+<td class="data">rw-r--r--</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Owner Name</th>
+<td class="data">u63347966</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">File Size</th>
+<td class="data">256KB</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">File Size (bytes)</th>
+<td class="data">262144</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX22" aria-label="Variables">
+<h1 class="contentitem toc">Variables</h1>
+<table class="table" style="border-spacing: 0" aria-label="Variables">
+<caption aria-label="Variables"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="6" scope="colgroup">Alphabetic List of Variables and Attributes</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">#</th>
+<th class="b header" scope="col">Variable</th>
+<th class="b header" scope="col">Type</th>
+<th class="r b header" scope="col">Len</th>
+<th class="b header" scope="col">Format</th>
+<th class="b header" scope="col">Informat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">7</th>
+<td class="data">1 Yr</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">12</th>
+<td class="data">10 Yr</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="data">2 Mo</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">8</th>
+<td class="data">2 Yr</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">13</th>
+<td class="data">20 Yr</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="data">3 Mo</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">9</th>
+<td class="data">3 Yr</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">14</th>
+<td class="data">30 Yr</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="data">4 Mo</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">10</th>
+<td class="data">5 Yr</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">6</th>
+<td class="data">6 Mo</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">11</th>
+<td class="data">7 Yr</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">15</th>
+<td class="data">Date</td>
+<td class="data">Char</td>
+<td class="r data">10</td>
+<td class="data">$YMMDD10.</td>
+<td class="data">&nbsp;</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="data">bc_1month</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="data">new_date</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">MMDDYY10.</td>
+<td class="data">MMDDYY10.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">16</th>
+<td class="data">t_dailyreturn</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="Means" data-sec-type="proc">
+<hr class="pagebreak">
+<div id="IDX23" class="proc_title_group">
+<p class="c proctitle">The MEANS Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Means Procedure</h1>
+<article aria-label="Summary statistics">
+<h1 class="contentitem toc">Summary statistics</h1>
+<table class="table" style="border-spacing: 0" aria-label="Summary statistics">
+<caption aria-label="Summary statistics"></caption>
+<colgroup><col><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Analysis Variable : t_dailyreturn</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">N</th>
+<th class="r b header" scope="col">Mean</th>
+<th class="r b header" scope="col">Std Dev</th>
+<th class="r b header" scope="col">Minimum</th>
+<th class="r b header" scope="col">Maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">20</td>
+<td class="r data">0.000117151</td>
+<td class="r data">0.000010979</td>
+<td class="r data">0.000092055</td>
+<td class="r data">0.000129863</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section data-name="Contents" data-sec-type="proc">
+<hr class="pagebreak">
+<div id="IDX24" class="proc_title_group">
+<p class="c proctitle">The CONTENTS Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Contents Procedure</h1>
+<section>
+<h1 class="contentfolder toc">WORK.RATIO</h1>
+<article aria-label="Attributes">
+<h1 class="contentitem toc">Attributes</h1>
+<table class="table" style="border-spacing: 0" aria-label="Attributes">
+<caption aria-label="Attributes"></caption>
+<colgroup><col><col><col><col></colgroup>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Data Set Name</th>
+<td class="data">WORK.RATIO</td>
+<th class="rowheader" scope="row">Observations</th>
+<td class="data">1</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Member Type</th>
+<td class="data">DATA</td>
+<th class="rowheader" scope="row">Variables</th>
+<td class="data">5</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Engine</th>
+<td class="data">V9</td>
+<th class="rowheader" scope="row">Indexes</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Created</th>
+<td class="data">04/29/2023 08:11:29</td>
+<th class="rowheader" scope="row">Observation Length</th>
+<td class="data">40</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Last Modified</th>
+<td class="data">04/29/2023 08:11:29</td>
+<th class="rowheader" scope="row">Deleted Observations</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protection</th>
+<td class="data">&nbsp;</td>
+<th class="rowheader" scope="row">Compressed</th>
+<td class="data">NO</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Data Set Type</th>
+<td class="data">&nbsp;</td>
+<th class="rowheader" scope="row">Sorted</th>
+<td class="data">NO</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Label</th>
+<td class="data">&nbsp;</td>
+<th class="rowheader" scope="row">&nbsp;</th>
+<td class="data">&nbsp;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Data Representation</th>
+<td class="data">SOLARIS_X86_64, LINUX_X86_64, ALPHA_TRU64, LINUX_IA64</td>
+<th class="rowheader" scope="row">&nbsp;</th>
+<td class="data">&nbsp;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Encoding</th>
+<td class="data">utf-8  Unicode (UTF-8)</td>
+<th class="rowheader" scope="row">&nbsp;</th>
+<td class="data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX25" aria-label="Engine/Host Information">
+<h1 class="contentitem toc">Engine/Host Information</h1>
+<table class="table" style="border-spacing: 0" aria-label="Engine/Host Information">
+<caption aria-label="Engine/Host Information"></caption>
+<colgroup><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Engine/Host Dependent Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Data Set Page Size</th>
+<td class="data">131072</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Number of Data Set Pages</th>
+<td class="data">1</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">First Data Page</th>
+<td class="data">1</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Max Obs per Page</th>
+<td class="data">3265</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Obs in First Data Page</th>
+<td class="data">1</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Number of Data Set Repairs</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Filename</th>
+<td class="data">/saswork/SAS_work84360000F5BD_odaws02-usw2-2.oda.sas.com/SAS_work9AB30000F5BD_odaws02-usw2-2.oda.sas.com/ratio.sas7bdat</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Release Created</th>
+<td class="data">9.0401M7</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Host Created</th>
+<td class="data">Linux</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Inode Number</th>
+<td class="data">134323263</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Access Permission</th>
+<td class="data">rw-r--r--</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Owner Name</th>
+<td class="data">u63347966</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">File Size</th>
+<td class="data">256KB</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">File Size (bytes)</th>
+<td class="data">262144</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX26" aria-label="Variables">
+<h1 class="contentitem toc">Variables</h1>
+<table class="table" style="border-spacing: 0" aria-label="Variables">
+<caption aria-label="Variables"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Alphabetic List of Variables and Attributes</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">#</th>
+<th class="b header" scope="col">Variable</th>
+<th class="b header" scope="col">Type</th>
+<th class="r b header" scope="col">Len</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="data">_FREQ_</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="data">_TYPE_</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="data">frc_return_Mean</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="data">frc_return_StdDev</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="data">t_dailyreturn_Mean</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+</div>
+
+
+</div>
+<p>
+</div>
+</body></html>
